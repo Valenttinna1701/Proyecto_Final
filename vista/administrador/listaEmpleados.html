@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../cssProyecto/styleLista.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 banner"></div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-12 logo"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 logout-container">
+                            <button id="cerrarSesionButton" class="btn">
+                                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav class="nav flex-column">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#submenu">
+                Empleados
+            </button>
+            <div class="collapse" id="submenu">
+                <button class="btn btn-secondary" id="registroButton">Registrar Empleado</button>
+                <button class="btn btn-secondary" id="empleadosButton">Lista Empleados</button>
+                <button class="btn btn-secondary" id="gruposButton">Grupos GES</button>
+                <button class="btn btn-secondary" id="capacitacionesButton">Capacitaciones</button>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#submenu2">
+                Accidentes e incidentes
+            </button>
+            <div class="collapse" id="submenu2">
+                <button class="btn btn-secondary" id="verReporteButton">Ver Reporte</button>
+                <button class="btn btn-secondary" id="reporteButton">Generar Reportes</button>
+                <button class="btn btn-secondary" id="misReportesButton">Mis Reportes</button>
+            </div>
+        </nav>
+
+        <article class="col-md-8 article-right" id="articleContent">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <select class="form-select" id="searchType" style="max-width: 250px;">
+                                <option value="nombre">Buscar por Nombre</option>
+                                <option value="número de identificacion">Buscar por identificación</option>
+                            </select>
+                            <input type="text" id="searchInput" class="form-control ms-2" placeholder="Ingrese su búsqueda">
+                            <button class="btn btn-primary" onclick="searchEmployee()">Buscar</button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="employee-list-container">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre Completo</th>
+                                    <th>Número de Identificación</th>
+                                    <th>Correo Electrónico</th>
+                                    <th>Teléfono</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeTableBody">
+                                <!-- Aquí se cargarán los datos dinámicamente -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="button-container">
+                    <button class="btn btn-dark" onclick="printReport()" id="imprimirButton">Imprimir Reportes</button>
+                </div>
+            </div>
+            <!-- Modal para mostrar detalles del empleado -->
+<div class="modal fade" id="employeeModal" tabindex="-1" aria-labelledby="employeeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="employeeModalLabel">Detalles del Empleado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Aquí se cargarán los detalles dinámicamente -->
+            </div>
+            <div class="modal-footer" id="modalFooter">
+                <button class="btn btn-primary" id="editButton">Guardar Cambios</button>
+                <button class="btn btn-danger" id="inactivateButton">Inactivar</button>
+            </div> 
+        </div>
+    </div>
+</div>
+    </article>
+</main>
+
+    <footer class="footer">
+        <p>&copy; 2024 Imperseg S.A.S. Todos los derechos reservados.</p>
+        <p>
+            <a href="mailto:contacto@empresa.com">Contacto</a> |
+            <a href="tel:+123456789">Teléfono</a> | 
+            <a href="https://www.facebook.com/empresa" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com/empresa" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/company/empresa" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="/soporte">Soporte</a> |
+            <a href="/privacidad">Política de Privacidad</a> |
+            <a href="/terminos">Términos y Condiciones</a>
+        </p>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../controlador/listaEmpleados1.js"></script>
+</body>
+
+</html>
+

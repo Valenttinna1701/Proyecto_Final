@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicioAdmin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../cssProyecto/styleGrupos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 banner"></div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-12 logo"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 logout-container">
+                            <button id="cerrarSesionButton" class="btn">
+                                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <nav class="nav flex-column">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#submenu">
+                Empleados
+            </button>
+            <div class="collapse" id="submenu">
+                <button class="btn btn-secondary" id="registroButton">Registrar Empleado</button>
+                <button class="btn btn-secondary" id="empleadosButton">Lista Empleados</button>
+                <button class="btn btn-secondary" id="gruposButton">Grupos GES</button>
+                <button class="btn btn-secondary" id="capacitacionesButton">Capacitaciones</button>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse"
+                data-bs-target="#submenu2">
+                Accidentes e incidentes
+            </button>
+            <div class="collapse" id="submenu2">
+                <button class="btn btn-secondary" id="verReporteButton">Ver Reporte</button>
+                <button class="btn btn-secondary" id="reporteButton">Generar Reportes</button>
+                <button class="btn btn-secondary" id="misReportesButton">Mis Reportes</button>
+            </div>
+        </nav>
+
+        <article class="col-md-8 article-right" id="articleContent">
+            <div class="container-fluid">
+                <div class="row mb-3">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <select class="form-select" id="searchType" style="max-width: 250px;">
+                                <option value="grupo">Buscar por Grupo_GES</option>
+                                <option value="fecha_inicio">Buscar por Fecha de Inicio</option>
+                                <option value="fecha_fin">Buscar por Fecha de Fin</option>
+                            </select>
+                            <input type="text" id="searchInput" class="form-control ms-2"
+                                placeholder="Ingrese su búsqueda">
+                            <button class="btn btn-primary" onclick="searchEmployee()">Buscar</button>
+                            <button id="registroGrupoButton" class="btn btn-primary ms-2">Agregar grupo</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="employee-list-container">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre grupo</th>
+                                    <th>Integrantes</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="employeeTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Modal para editar grupo -->
+                <div class="modal fade" id="editGrupoModal" tabindex="-1" aria-labelledby="editGrupoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="editGrupoModalLabel">Editar grupo</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form id="editGrupoForm">
+                                    <div class="mb-3">
+                                        <label for="editGrupo" class="form-label">Nombre del grupo:</label>
+                                        <input type="text" class="form-control" id="editGrupo" name="editGrupo" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="editIntegrantes" class="form-label">Seleccionar integrantes:</label>
+                                        <select class="form-select" id="editIntegrantes" name="editIntegrantes[]" multiple required>
+                                            <!-- Los usuarios se cargarán dinámicamente aquí -->
+                                        </select>
+                                    </div>                                    
+                                    <input type="hidden" id="grupoId" name="grupoId">
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" form="editGrupoForm" class="btn btn-primary">Actualizar grupo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                
+
+            <!-- Modal para agregar nuevo grupo -->
+            <div class="modal fade" id="addGrupoModal" tabindex="-1" aria-labelledby="addGrupoModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="addGrupoModalLabel">Agregar nuevo grupo</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form id="addGrupoForm">
+                                <div class="mb-3">
+                                    <label for="grupo" class="form-label">Nombre del grupo:</label>
+                                    <input type="text" class="form-control" id="grupo" name="grupo" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="integrantes" class="form-label">Seleccionar integrantes:</label>
+                                    <select class="form-select" id="integrantes" name="integrantes[]" multiple required>
+                                        <!-- Los usuarios se cargarán dinámicamente aquí -->
+                                    </select>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" form="addGrupoForm" class="btn btn-primary">Agregar nuevo grupo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer text-center mt-4">
+        <p>&copy; 2024 Imperseg S.A.S. Todos los derechos reservados.</p>
+        <p>
+            <a href="mailto:contacto@empresa.com">Contacto</a> |
+            <a href="tel:+123456789">Teléfono</a> |
+            <a href="https://www.facebook.com/empresa" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com/empresa" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/company/empresa" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="/soporte">Soporte</a> |
+            <a href="/privacidad">Política de Privacidad</a> |
+            <a href="/terminos">Términos y Condiciones</a>
+        </p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../controlador/gruposGes1.js"></script>
+</body>
+
+</html>

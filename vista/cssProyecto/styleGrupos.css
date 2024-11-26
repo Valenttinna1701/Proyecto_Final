@@ -1,0 +1,250 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    align-items: center;
+}
+
+.header {
+    background-color: #045e8f;
+    padding: 20px 0;
+}
+
+.banner {
+    background-image: url(https://wasip.com/wp-content/uploads/2022/12/Hi-Vis-Workwear-Banner-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    margin-top: 15px;
+    background-image: url(https://imperseg.odoo.com/web/image/website/1/logo/300x300?unique=8f7a8c7);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    width: 90%;
+    height: 800px;
+    display: flex;
+    align-items: center; 
+    margin-left: 5%;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.article-right {
+    background-color: rgb(164, 159, 159);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    width: 70%;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.employee-list-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead {
+    background-color: #045e8f;
+}
+
+.table th {
+    color: #000000;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #9ca8af;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: none;
+    background-color: rgba(248, 249, 250, 0.8);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+nav {
+    background-color: rgba(4, 69, 122, 0.627);
+    color: white;
+    height: 700px;
+    width: 280px;
+    margin-right: 17px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    margin-left: 20px;
+    gap: 8px;
+}
+
+.btn-secondary {
+    background-color: rgb(4, 69, 122);
+    width: 70%;
+    height: 60px;
+    border: 0;
+    margin-bottom: 10px; /* Añadir un margen inferior para crear el espacio */
+}
+
+.footer {
+    background-color: rgb(4, 69, 122);
+    padding: 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.footer a {
+    color: #a99c0c;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.logout-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#cerrarSesionButton {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#cerrarSesionButton:hover {
+    color: #000000;
+    background-color: #ffffff8a;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end; /* Para que el botón "Agregar grupo" esté a la derecha */
+    margin-bottom: 20px; /* Espacio entre el contenedor de botones y la tabla */
+}
+
+.button-container:last-child {
+    justify-content: center; /* Centra el botón "Imprimir" */
+}
+
+/* Estilos para la barra de desplazamiento */
+.table-body-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.table-body-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-body-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.table-body-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .article-right {
+        width: 90%;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .employee-list-container {
+        max-height: 400px;
+    }
+
+    #imprimirButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    #cerrarSesionButton {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+#integrantes, #editIntegrantes {
+    height: 200px; /* Altura fija para mostrar más opciones */
+    overflow-y: auto; /* Scroll vertical si hay muchas opciones */
+}
+
+#integrantes option, #editIntegrantes option {
+    padding: 5px;
+    cursor: pointer;
+}
+
+#integrantes option:hover, #editIntegrantes option:hover {
+    background-color: #f0f0f0;
+}
+
+#integrantes option:checked, #editIntegrantes option:checked {
+    background-color: #007bff;
+    color: white;
+}

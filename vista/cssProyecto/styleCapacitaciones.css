@@ -1,0 +1,741 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    align-items: center;
+}
+
+.header {
+    background-color: #045e8f;
+    padding: 20px 0;
+}
+
+.banner {
+    background-image: url(https://wasip.com/wp-content/uploads/2022/12/Hi-Vis-Workwear-Banner-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    margin-top: 15px;
+    background-image: url(https://imperseg.odoo.com/web/image/website/1/logo/300x300?unique=8f7a8c7);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    width: 90%;
+    height: 800px;
+    display: flex;
+    align-items: center; 
+    margin-left: 5%;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.article-right {
+    background-color: rgb(164, 159, 159);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 700px;
+    width: 70%;
+    padding: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.employee-list-container {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.table-responsive {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead {
+    background-color: #045e8f;
+}
+
+.table th {
+    color: #000000;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #9ca8af;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: none;
+    background-color: rgba(248, 249, 250, 0.8);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+nav {
+    background-color: rgba(4, 69, 122, 0.627);
+    color: white;
+    height: 700px;
+    width: 280px;
+    margin-right: 17px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    margin-left: 20px;
+    gap: 8px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgb(4, 69, 122);
+    width: 70%;
+    height: 60px;
+    border: 0;
+    gap: 2px;
+}
+
+.collapse {
+    width: 100%;
+}
+
+a {
+    color: white;
+}
+
+.row a {
+    color: white;
+    font-size: large;
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.form-container form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.modalAc {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .modalAc-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover, .close:focus {
+    color: black;
+    cursor: pointer;
+  }
+
+  #capacitacionForm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #capacitacionForm label, #capacitacionForm input, #capacitacionForm button {
+    margin-bottom: 10px;
+  }
+
+.footer {
+    background-color: rgb(4, 69, 122);
+    padding: 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.footer a {
+    color: #a99c0c;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.btn-primary {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sm {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.custom-modal-lg {
+    max-width: 90%;
+    font-family: inherit;
+}
+
+.custom-crud-modal .modal-dialog {
+    max-width: 90%;
+    margin: 1.75rem auto;
+    font-family: inherit;
+}
+
+.custom-crud-modal .modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(173, 49, 49, 0.2);
+    font-family: inherit;
+}
+
+.custom-crud-modal .modal-header {
+    background-color: #032142;
+    color: #fff;
+    border-bottom: 1px solid #ddd;
+    font-family: inherit;
+}
+
+.custom-crud-modal .modal-body {
+    padding: 1.5rem;
+    font-family: inherit;
+}
+
+.custom-crud-modal .btn-warning, .custom-crud-modal .btn-danger {
+    font-size: 0.875rem;
+    font-family: inherit;
+}
+
+.button-container {
+    text-align: right;
+}
+
+.btn-info {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    color: white;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+}
+
+.popup-content {
+    background-color: #f8f9fa;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-content form {
+    margin-top: 20px;
+}
+
+.popup-content .form-group {
+    margin-bottom: 15px;
+}
+
+.popup-content input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.popup-content .btn-primary {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.popup-content .btn-primary:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content h3 {
+    margin-top: 20px;
+    color: #045e8f;
+}
+
+.popup-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.popup-content li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.popup-content .btn-sm {
+    padding: 2px 8px;
+    font-size: 0.875rem;
+}
+
+.popup-content .btn-warning,
+.popup-content .btn-danger {
+    margin-left: 5px;
+}
+
+#reporteForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 200px;
+}
+
+.input-group {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input-group .form-control {
+    flex: 1;
+}
+
+.input-group-append {
+    display: flex;
+}
+
+.form-control {
+    width: 100%;
+}
+
+textarea.form-control {
+    min-height: 150px;
+}
+
+.text-right {
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+.nav .btn-secondary {
+    margin-bottom: 10px;
+}
+
+.logout-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#cerrarSesionButton {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#cerrarSesionButton:hover {
+    color: #000000;
+    background-color: #ffffff8a;
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .article-right {
+        width: 90%;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .employee-list-container {
+        max-height: 400px;
+    }
+
+    .print-button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    #imprimirButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    #cerrarSesionButton {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+.employee-list-container {
+    height: 520px; /* Ajusta esta altura según tus necesidades */
+    overflow: hidden;
+}
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.table-body-container {
+    height: calc(100% - 56px); /* Altura total menos la altura del encabezado */
+    overflow-y: auto;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    background-color: #9ca8af;
+    z-index: 1;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+/* Estilos para la barra de desplazamiento */
+.table-body-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.table-body-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.table-body-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.table-body-container::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+/* Estilos para el modal de editar empleado */
+#employeeModal .modal-content {
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#employeeModal .modal-header {
+    background-color: #045e8f;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+#employeeModal .modal-title {
+    font-weight: 600;
+}
+
+#employeeModal .modal-body {
+    padding: 30px;
+}
+
+#employeeModal .form-label {
+    font-weight: 500;
+    color: #333;
+}
+
+#employeeModal .form-control {
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    padding: 10px 15px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#employeeModal .form-control:focus {
+    border-color: #045e8f;
+    box-shadow: 0 0 0 0.2rem rgba(4, 94, 143, 0.25);
+}
+
+#employeeModal .btn-primary {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    padding: 10px 20px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+#employeeModal .btn-primary:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#employeeModal .btn-secondary {
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    #employeeModal .modal-dialog {
+        margin: 10px;
+    }
+
+    .employee-inactive {
+        background-color: #f00000 !important; /* Color de fondo rojo claro */
+    }
+}
+
+/* Estilos para el modal */
+.modal-backdrop {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Modal principal */
+.modal-content {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Encabezado del modal */
+.modal-header {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-header .btn-close {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+/* Cuerpo del modal */
+.modal-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Campo de formulario */
+.form-control {
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los botones */
+.modal-footer {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+}
+
+.modal-footer .btn {
+    border-radius: 8px;
+    padding: 8px 15px;
+    font-size: 16px;
+}
+
+.modal-footer .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+.modal-footer .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.modal-footer .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Estilo para el formulario de "Descripción" */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Modal de asistencia */
+/* Attendance Modal Styles */
+#modalAsistencia .table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#modalAsistencia .attendance-summary .card {
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#modalAsistencia .attendance-summary .card-body {
+    padding: 1rem;
+}
+
+#modalAsistencia .attendance-summary .card-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+#modalAsistencia .attendance-summary .card-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+}
+
+.status-presente {
+    background-color: #28a745;
+    color: white;
+}
+
+.status-ausente {
+    background-color: #dc3545;
+    color: white;
+}
+
+.status-pendiente {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.btn-light-blue {
+    background-color: #add8e6; /* Azul claro */
+    color: #000; /* Texto negro */
+    border: 1px solid #add8e6;
+}
+
+.btn-light-blue:hover {
+    background-color: #87ceeb; /* Azul más oscuro */
+    color: #fff; /* Texto blanco */
+}

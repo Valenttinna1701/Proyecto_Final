@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../cssProyecto/styleGenerarReporte.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 banner"></div>
+                <div class="col-md-3">
+                    <div class="row">
+                        <div class="col-12 logo"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 logout-container">
+                            <button id="cerrarSesionButton" class="btn">
+                                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mt-3">
+        <nav class="nav flex-column">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#submenu">
+                Empleados
+            </button>
+            <div class="collapse" id="submenu">
+                <button class="btn btn-secondary" id="registroButton">Registrar Empleado</button>
+                <button class="btn btn-secondary" id="empleadosButton">Lista Empleados</button>
+                <button class="btn btn-secondary" id="gruposButton">Grupos GES</button>
+                <button class="btn btn-secondary" id="capacitacionesButton">Capacitaciones</button>
+            </div>
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#submenu2">
+                Accidentes e Incidentes
+            </button>
+            <div class="collapse" id="submenu2">
+                <button class="btn btn-secondary" id="verReporteButton">Ver Reporte</button>
+                <button class="btn btn-secondary" id="reporteButton">Generar Reportes</button>
+                <button class="btn btn-secondary" id="misReportesButton">Mis Reportes</button>
+            </div>
+        </nav>
+
+        <article class="col-md-8 article-right" id="articleContent">
+            <form id="reporteForm">
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="fechaHora">Fecha y Hora</label>
+                        <input type="text" id="fechaHora" class="form-control" placeholder="Selecciona Fecha y Hora" autocomplete="off">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="area">Área</label>
+                        <div class="input-group">
+                            <select class="form-control" id="area">
+                                <option value="">Seleccione un área</option>
+                                <option value="sellado">Área de Sellado</option>
+                                <option value="corte">Área de Corte</option>
+                                <option value="confeccion">Área de Confección</option>
+                                <option value="contabilidad">Área de Contabilidad</option>
+                                <option value="oficina">Oficina Principal</option>
+                            </select>
+                            <div class="input-group-append">
+                                <button id="NuevoArea" type="button" class="btn btn-info" onclick="showAddAreaPopup()">Nuevo</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="ubicacion">Ubicación</label>
+                        <div class="input-group">
+                            <select class="form-control" id="ubicacion">
+                                <option value="">Seleccione un sector</option>
+                                <option value=" Cocina">Cocina</option>
+                                <option value="Bano">Baño</option>
+                                <option value="Escaleras">Escaleras</option>
+                                <option value="Balcon">Balcón</option>
+                                <option value="Pasillo">Pasillo</option>
+                            </select>
+                            <div class="input-group-append">
+                                <button id="NuevoSector" type="button" class="btn btn-info" onclick="showAddSectorPopup()">Nuevo</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea class="form-control" id="descripcion" rows="6" placeholder="Describe el reporte aquí"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="adjuntoUrl">URL del Adjunto</label>
+                    <input type="url" class="form-control" id="adjuntoUrl" placeholder="Ingrese la URL del adjunto" autocomplete="off">
+                </div>
+                <div class="text-right">
+                    <button type="submit" class="btn btn-success">Enviar</button>
+                </div>
+                <div id="sectorError" class="text-danger"></div>
+                <div id="sectorSuccess" class="text-success"></div>
+            </form>
+
+            <!-- Popup para agregar área -->
+            <div id="addAreaPopup" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closeAddAreaPopup()">&times;</span>
+                    <h2>Agregar Área</h2>
+                    <form id="addAreaForm">
+                        <div class="form-group">
+                            <input type="text" id="newAreaName" class="form-control" placeholder="Ingrese el nombre del área" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </div>
+                    </form>
+                    <ul id="areaList">
+                        <!-- Suponiendo que estás generando dinámicamente esta lista -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Popup para agregar sector -->
+            <div id="addSectorPopup" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closeAddSectorPopup()">&times;</span>
+                    <h2>Agregar Sector</h2>
+                    <form id="addSectorForm">
+                        <div class="form-group">
+                            <input type="text" id="newSectorName" class="form-control" placeholder="Ingrese el nombre del sector" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </div>
+                    </form>
+                    <h3>Sectores Existentes</h3>
+                    <ul id="sectorList">
+                        <!-- Los sectores se llenarán aquí dinámicamente -->
+                    </ul>
+                </div>
+            </div>
+
+        </article>
+    </main>
+
+    <footer class="footer text-center mt-4">
+        <p>&copy; 2024 Imperseg S.A.S. Todos los derechos reservados.</p>
+        <p>
+            <a href="mailto:contacto@empresa.com">Contacto</a> |
+            <a href="tel:+123456789">Teléfono</a> |
+            <a href="https://www.facebook.com/empresa" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com/empresa" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com/company/empresa" target="_blank">LinkedIn</a>
+        </p>
+        <p>
+            <a href="/soporte">Soporte</a> |
+            <a href="/privacidad">Política de Privacidad</a> |
+            <a href="/terminos">Términos y Condiciones</a>
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../../controlador/generarReporte1.js"></script>
+
+
+        
+    </body>
+    </html>

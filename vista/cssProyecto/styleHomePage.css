@@ -1,0 +1,112 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.header {
+    background-color: #045e8f;
+    padding: 20px 0;
+}
+
+.banner {
+    background-image: url(https://www.uniminuto.edu/sites/default/files/2023-03/Especializacio%CC%81n-En-Gerencia-De-Riesgos-Laborales%2C-Seguridad-Y-Salud-En-El-Trabajo-.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.banner h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.logo {
+    background-image: url(https://imperseg.odoo.com/web/image/website/1/logo/300x300?unique=8f7a8c7);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+.login {
+    text-align: center;
+
+}
+
+.navbar {
+    background-color: #034870;
+}
+
+.aside-image {
+    height: 350px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.aside-left {
+    background-image: url(https://www.segusa.com.mx/wp-content/uploads/2023/09/uniformes-industtriales-1140x641.jpg);
+}
+
+.aside-right {
+    background-image: url(https://www.ambientum.com/wp-content/uploads/2024/02/Garantizando-la-Seguridad-Laboral.jpg);
+}
+
+.article {
+    background-color: rgb(164, 159, 159);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.footer {
+    background-color: #034870;
+    color: white;
+    text-align: center;
+
+}
+
+.footer a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: white;
+}
+.button-container { 
+    margin-top: 20px; 
+}
+.article-content { 
+    display: none; 
+}
+.article-content.show { 
+    display: block; 
+}
+.nav-button { 
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center           
+}        
+.nav-button i {
+    margin-right: 8px;
+}
+.nav-button.active {
+    color: white; /* Color activo */
+}
+
+@media (max-width: 768px) {
+    .banner, .logo, .aside-image {
+        height: 150px;
+    }
+}

@@ -1,0 +1,477 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    align-items: center;
+}
+
+.header {
+    background-color: #045e8f;
+    padding: 20px 0;
+}
+
+.banner {
+    background-image: url(https://wasip.com/wp-content/uploads/2022/12/Hi-Vis-Workwear-Banner-scaled.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 400px;
+    height: 150px;
+    display: flex;
+    margin-top: 15px;
+    background-image: url(https://imperseg.odoo.com/web/image/website/1/logo/300x300?unique=8f7a8c7);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+main {
+    width: 90%;
+    height: 800px;
+    display: flex;
+    align-items: center; 
+    margin-left: 5%;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.article-right {
+    background-color: rgb(164, 159, 159);
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
+    width: 70%;
+    padding: 10px;
+    
+}
+
+nav {
+    background-color: rgba(4, 69, 122, 0.627);
+    color: white;
+    height: 700px;
+    width: 280px;
+    margin-right: 17px;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: larger;
+    margin-left: 20px;
+    gap: 8px;
+}
+
+.nav-link {
+    color: white;
+}
+
+.btn-secondary {
+    background-color: rgb(4, 69, 122);
+    width: 70%;
+    height: 60px;
+    border: 0;
+    gap: 2px;
+}
+
+.collapse {
+    width: 100%;
+}
+
+a {
+    color: white;
+}
+
+.row a {
+    color: white;
+    font-size: large;
+}
+
+.form-container {
+    padding: 20px;
+}
+
+.form-container form {
+    max-width: 500px;
+    margin: auto;
+}
+
+.footer {
+    background-color: rgb(4, 69, 122);
+    padding: 20px;
+    text-align: center;
+    color: #f0f0f0;
+}
+
+.footer a {
+    color: #a99c0c;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.employee-list-container {
+    background-color:  rgb(164, 159, 159);
+    border-radius: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.employee-list-container h2 {
+    color: #045e8f;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.table-responsive {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table thead {
+    background-color: #045e8f;
+    
+
+}
+
+.table th {
+    color: #000000;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 15px;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: none;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #9ca8af;
+}
+
+.table td {
+    padding: 15px;
+    vertical-align: middle;
+    border: none;
+    background-color: rgba(248, 249, 250, 0.8);
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(248, 249, 250, 0.9);
+}
+
+.btn-primary {
+    background-color: #045e8f;
+    border-color: #045e8f;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #034974;
+    border-color: #034974;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-sm {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .table th, .table td {
+        padding: 10px;
+    }
+
+    .employee-list-container {
+        padding: 20px;
+    }
+
+    .employee-list-container h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+.custom-modal-lg {
+    max-width: 90%; /* Ajusta el valor según tus necesidades */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+/* modal-styles.css */
+.custom-crud-modal .modal-dialog {
+    max-width: 90%; /* Ajusta el ancho del modal, puedes modificar según sea necesario */
+    margin: 1.75rem auto; /* Ajusta el margen superior e inferior para centrar el modal verticalmente */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .modal-content {
+    border-radius: 0.5rem; /* Esquinas redondeadas */
+    box-shadow: 0 4px 8px rgba(173, 49, 49, 0.2); /* Sombra */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .modal-header {
+    background-color: #032142; /* Color de fondo del encabezado del modal */
+    color: #fff; /* Color del texto del encabezado del modal */
+    border-bottom: 1px solid #ddd; /* Borde inferior */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .modal-body {
+    padding: 1.5rem; /* Espaciado interno del cuerpo del modal */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .table {
+    margin-bottom: 0; /* Elimina el margen inferior de la tabla */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .table th, .custom-crud-modal .table td {
+    padding: 0.75rem; /* Espaciado interno de las celdas de la tabla */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.custom-crud-modal .table thead {
+    background-color: #3c75af; /* Color de fondo del encabezado de la tabla */
+    color: #fff; /* Color del texto del encabezado de la tabla */
+}
+
+.custom-crud-modal .btn-warning, .custom-crud-modal .btn-danger {
+    font-size: 0.875rem; /* Tamaño de fuente de los botones */
+    font-family: inherit; /* Hereda la fuente del body */
+}
+
+.button-container {
+    text-align: right;
+}
+
+/* Estilos para los botones de agregar área y ubicación */
+.btn-info {
+background-color: #045e8f;
+border-color: #045e8f;
+color: white;
+margin-left: 10px;
+transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+background-color: #034974;
+border-color: #034974;
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para el popup */
+.popup {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.4);
+backdrop-filter: blur(5px);
+}
+
+.popup-content {
+background-color: #f8f9fa;
+margin: 10% auto;
+padding: 20px;
+border: 1px solid #888;
+width: 50%;
+max-width: 500px;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.close-btn {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+color: #000;
+text-decoration: none;
+cursor: pointer;
+}
+
+/* Estilos para los formularios dentro del popup */
+.popup-content form {
+margin-top: 20px;
+}
+
+.popup-content .form-group {
+margin-bottom: 15px;
+}
+
+.popup-content input[type="text"] {
+width: 100%;
+padding: 8px;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+
+.popup-content .btn-primary {
+background-color: #045e8f;
+border-color: #045e8f;
+color: white;
+padding: 8px 16px;
+border-radius: 4px;
+transition: all 0.3s ease;
+}
+
+.popup-content .btn-primary:hover {
+background-color: #034974;
+border-color: #034974;
+transform: translateY(-2px);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para la lista de áreas/ubicaciones existentes */
+.popup-content h3 {
+margin-top: 20px;
+color: #045e8f;
+}
+
+.popup-content ul {
+list-style-type: none;
+padding: 0;
+}
+
+.popup-content li {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 8px 0;
+border-bottom: 1px solid #ddd;
+}
+
+.popup-content .btn-sm {
+padding: 2px 8px;
+font-size: 0.875rem;
+}
+
+.popup-content .btn-warning,
+.popup-content .btn-danger {
+margin-left: 5px;
+}
+#reporteForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.form-group {
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 200px;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group .form-control {
+    flex: 1;
+}
+
+.input-group-append {
+    display: flex;
+}
+
+.btn-info {
+    white-space: nowrap;
+}
+
+.form-control {
+    width: 100%;
+}
+
+textarea.form-control {
+    min-height: 150px;
+}
+
+.text-right {
+    align-self: flex-end;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .form-group {
+        flex: 1 1 100%;
+    }
+}
+
+.nav .btn-secondary {
+    margin-bottom: 10px;
+}
+
+.logout-container {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#cerrarSesionButton {
+    color: #000000;
+    background-color: #ffffff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+#cerrarSesionButton:hover {
+    color: #000000;
+    background-color: #ffffff8a;
+}
+
+@media (max-width: 768px) {
+    #cerrarSesionButton {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
